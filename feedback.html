@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cafe Feedback</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#0f0f1a, rgb(56, 47, 93));
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.feedback-container{
+    margin-top: 250px;
+    background:white;
+    padding:40px;
+    width:400px;
+    border-radius:10px;
+    box-shadow:0 6px 15px rgba(205, 49, 49, 0.1);
+}
+.moon {
+    display: inline-block;
+    transform: rotate(-20deg) scale(3);
+}
+h4
+{   
+    padding-left: 20px;
+    font-weight: lighter;
+    font-size: 22px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+p{
+    text-align:center;
+    color:gray;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:12px;
+    background-color:#6f4e37;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background-color:#5a3e2b;
+}
+
+#successMessage{
+    color:green;
+    margin-top:15px;
+    text-align:center;
+}
+
+nav {
+    height: 80px;
+    background: linear-gradient(90deg,rgb(239, 242, 178), rgb(243, 236, 236));;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: flex-start; 
+    position:fixed ;
+    z-index: 1000;
+    width: 100%;
+    top: 0px;
+    margin-left: -10px;
+}
+
+nav a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 20px;
+    font-size: 22px;
+    color: #0f0f1a;
+    transition: color 0.3s;
+}
+
+nav a:first-of-type {
+    padding-left: 45%;
+}
+
+nav a:hover {
+    color: #e6c35c;
+}
+
+/* Media queries */
+@media(max-width: 768px) 
+{
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+         padding:0px 50px;
+         gap: 0px;
+    }
+
+    nav a:first-of-type {
+        padding-left: 0;
+    }
+    nav a
+    {
+        font-size: large;
+    }
+    .foot-img
+    {
+        position: absolute;
+        top: 18px;
+    }
+}
+@media(min-width:769px)
+{
+    nav a:first-of-type
+    {
+        padding-left: 30%;
+    }
+}
+@media(max-width: 482px)
+{
+    nav
+    {
+        display: flex;
+        gap:-20px;
+    }
+    .foot-img
+    {
+        position: absolute;
+        top: 18px;
+    }
+}
+@media(min-width: 319px) and (max-width: 426px){
+    nav
+    {
+        display: flex;
+    }
+    nav a:first-of-type
+    {
+        margin-left: -40px; 
+    }
+    nav a
+    {
+        font-size: medium;
+        margin-left: -20px;
+    }
+}
+@media(min-width:1439px )
+{
+    nav 
+    {
+        height: 150px;
+    }
+    nav a
+    {
+        padding-top: 30px; 
+        font-size: 30px;
+    }
+    h1{
+        margin-top: 200px;
+    }
+    p
+    {
+        font-size: 27px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+     <nav>
+    <h4> <span class="moon"> ☾ </span>  <span class="heading">MIDNIGHT BREW</span></h4>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="feedback.html">feedback</a>
+    </nav>
+
+<div class="feedback-container">
+
+<h1>Cafe Feedback ☕</h1>
+<p>Tell us about your experience</p>
+
+<form id="feedbackForm">
+
+<label>Name</label>
+<input type="text" placeholder="Enter your name" required>
+
+<label>Email</label>
+<input type="email" placeholder="Enter your email" required>
+
+<label>Rate Your Experience</label>
+<select required>
+<option value="">Choose rating</option>
+<option>⭐⭐⭐⭐⭐ Excellent</option>
+<option>⭐⭐⭐⭐ Good</option>
+<option>⭐⭐⭐ Average</option>
+<option>⭐⭐ Poor</option>
+<option>⭐ Very Bad</option>
+</select>
+
+<label>Your Feedback</label>
+<textarea rows="5" placeholder="Write your feedback here..." required></textarea>
+
+<button type="submit">Submit Feedback</button>
+
+</form>
+
+<p id="successMessage"></p>
+
+</div>
+
+
+<script src="java.js"></script>
+</body>
+</html>
